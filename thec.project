@@ -1,0 +1,32 @@
+<NotepadPlus>
+    <Project name="thec">
+        <File name="src\arr.c" />
+        <File name="src\celfahr.c" />
+        <File name="src\const.c" />
+        <File name="src\for.c" />
+        <File name="src\mem.c" />
+        <File name="src\plus.c" />
+        <File name="src\ptr.c" />
+        <File name="src\scanf.c" />
+        <File name="src\sizeof.c" />
+        <File name="src\static.c" />
+        <File name="src\swap.c" />
+        <File name="src\swap1.c" />
+        <File name="src\typedef.c" />
+        <File name="src\thqc1q4.c" />
+        <File name="src\thqc1q5.c" />
+        <File name="src\thqc1q6.c" />
+        <File name="src\thqc2q4.2.c" />
+        <File name="src\thqc2q4.3.c" />
+        <File name="src\thqc2q4.6.c" />
+        <File name="src\thqc2q4.7.c" />
+        <File name="src\revert.c" />
+        <File name="src\test.c" />
+        <File name="src\thqc3q.c" />
+        <File name="src\thqc4q.c" />
+        <File name="src\cref.c" />
+        <File name="src\thqc5q.c" />
+        <File name="src\thqc6q.c" />
+        <File name="src\typedef.c" />
+    </Project>
+</NotepadPlus>
