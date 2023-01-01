@@ -15,7 +15,7 @@ int main(void)
 #endif
     main1(num);
     main2(num);
-}   
+}
 
 void main1(const int num)
 {
@@ -26,17 +26,16 @@ void main1(const int num)
 #else
     sprintf(str, "%d", num);
 #endif
-    
     printf("sprintf your input number is: %s\n", str);
-}  
-  
+}
+
 void main2(const int num)
 {
     int  left    = num, mod = 0, idx = 0;
     char str[20] = {0};
     char *p      = NULL;
     char c       = '\0';
-    
+
     if(num < 0){
         str[idx++] = '-';
         left *= -1;
