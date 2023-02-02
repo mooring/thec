@@ -1,4 +1,4 @@
 @echo off
 f:
 cd \src
-@tc /Cf:\thec.tc
+@tc /Cf:\thec.tc
