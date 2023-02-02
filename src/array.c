@@ -9,9 +9,9 @@ void printCharArr(char *arr[], int asize){
 
 int main(){
     char* abc[] = {
-        {'A','B','C',0},
+        "ABCD",
         "abcdef",
-        {"XY"}
+        "XY"
     };
     printCharArr(abc, sizeof(abc)/sizeof(char*));
     return 0;

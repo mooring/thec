@@ -12,11 +12,13 @@ $(BIN) : $(OBJ)
 $(MBIN): $(MOBJ)
 
 obj/%.o: src/%.c
-	gcc -o $@ -c $<
+	gcc -g -c $< -o $@
 bin/%: obj/%.o
 	gcc -o $@ $<
 min/%: obj/%.o
 	gcc -lm -o $@ $<
+
+.PHONY:
 
 
 clean:

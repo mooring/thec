@@ -6,7 +6,7 @@ int main()
     char c = 'a', carr[] = {'a','b','c'};
     int *iptr = &i, *iaptr = iarr;
     char *cptr = &c, *captr = carr;
-    printf("iptr=%p, iptr+1=%d\n", iptr, iptr+1);
+    printf("iptr=%p, iptr+1=%p\n", iptr, iptr+1);
     return 0;
 }
 

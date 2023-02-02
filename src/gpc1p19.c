@@ -10,7 +10,7 @@ int main()
     int    a = 100;
     double b = 4.5;
     printf("%d %d %s\n", _a, _b, _d);
-    printf("%d %d %d %d\n",
+    printf("%lu %lu %lu %lu\n",
             sizeof(x), sizeof(y), sizeof(a), sizeof(b));
     return 0;
 }

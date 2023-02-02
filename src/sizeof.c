@@ -10,11 +10,11 @@ int main()
     long  long longlong_arr[10];
     float float_arr[10];
     double double_arr[10];
-    printf("sizeof(char_ptr)=%d, elem=%d\n", 
-            sizeof(char_ptr), 
+    printf("sizeof(char_ptr)=%lu, elem=%lu\n", 
+            sizeof(char_ptr),
             sizeof(char_ptr)/sizeof(char_ptr[0])
     );
-    printf("sizeof(void *)=%d\nchar=%d\nshort=%d\nint=%d\nlong=%d\nlong long=%d\nfloat=%d\ndouble=%d\n",
+    printf("sizeof(void *)=%lu\nchar=%lu\nshort=%lu\nint=%lu\nlong=%lu\nlong long=%lu\nfloat=%lu\ndouble=%lu\n",
             sizeof(void *),
             sizeof(char_arr),
             sizeof(short_arr),
