@@ -28,5 +28,7 @@
         <File name="src\thqc5q.c" />
         <File name="src\thqc6q.c" />
         <File name="src\typedef.c" />
+        <File name="src\hanoi.c" />
+        <File name="src\array.c" />
     </Project>
 </NotepadPlus>
