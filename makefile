@@ -5,6 +5,8 @@ MBIN= $(patsubst obj/%.o,min/%,$(MOBJ))
 OBJ = $(filter-out $(MOBJ),$(patsubst src/%.c,obj/%.o,$(SRC)))
 BIN = $(filter-out $(MBIN),$(patsubst obj/%.o,bin/%,$(OBJ)))
 
+.PHONY: all
+
 all    : $(BIN) $(MBIN)
 	mv min/* bin/
 $(OBJ) : $(SRC)
@@ -18,8 +20,8 @@ bin/%: obj/%.o
 min/%: obj/%.o
 	gcc -lm -o $@ $<
 
-.PHONY:
-
+init:
+	mkdir -p min bin obj
 
 clean:
 	rm -f obj/* bin/* min/*
