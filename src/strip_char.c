@@ -10,7 +10,6 @@ void stripAlpha(char str[], char f){
             str[j++] = str[i];
         }
     }
-    str[j] = 0;
 }
 
 int main()
