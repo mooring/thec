@@ -5,7 +5,7 @@ void stripAlpha(char str[], char f){
     int i, j, l;
     l = strlen(str);
 
-    for(i=j=0;i<l;i++){
+    for(i=j=0; str[i]!='\0'; i++){
         if(str[i] != f){
             str[j++] = str[i];
         }
