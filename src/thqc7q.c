@@ -45,14 +45,14 @@ void q2(){
     ac = 4 * a * c;
     printf("b*b-4ac=%d\n", bs - ac);
     if(bs - ac < 0){
-        printf("ax^2 + bx + c = 0 has no root when a=%d b=%d c=%d\n", a, b, c);
+        printf("ax^2+bx+c=0 has no root\nwhen a=%d b=%d c=%d\n", a, b, c);
     }else if(bs - ac == 0){
         x[0] = -b/2/(double)a;
-        printf("ax^2 + bx + c = 0 roots are x1=x2=%.2lf when a=%d b=%d c=%d\n", x[0], a, b, c);
+        printf("ax^2+bx+c=0 roots x1=x2=%.2lf\nwhen a=%d b=%d c=%d\n", x[0], a, b, c);
     }else{
         x[0] = (0+sqrt((double)(bs - ac))-b)/2/a;
         x[1] = (0-sqrt((double)(bs - ac))-b)/2/a;
-        printf("ax^2 + bx + c = 0 roots are x1=%.2lf, x2=%.2lf when a=%d b=%d c=%d\n", x[0], x[1], a, b, c);
+        printf("ax^2+bx+c=0 roots x1=%.2lf, x2=%.2lf\nwhen a=%d b=%d c=%d\n", x[0], x[1], a, b, c);
     }
 }
 
