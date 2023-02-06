@@ -3,13 +3,15 @@
 void selectSort(int arr[], int cnt){
     int i, j, t;
     for(i=0;i<cnt-1;i++){
+        t = i;
         for(j=i+1;j<cnt;j++){
-            if(arr[j] < arr[i]){
-                t = arr[i];
-                arr[i] = arr[j];
-                arr[j] = t;
+            if(arr[j] < arr[t]){
+                t = j;
             }
         }
+        j = arr[i];
+        arr[i] = arr[t];
+        arr[t] = j;
     }
 }
 
