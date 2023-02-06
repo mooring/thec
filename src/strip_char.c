@@ -5,13 +5,12 @@ void stripAlpha(char str[], char f){
     int i, j, l;
     l = strlen(str);
 
-    for(i=0;i<l;i++){
-        if(str[i] == f){
-            for(j=i+1;j<l;j++){
-                str[j-1] = str[j];
-            }
+    for(i=j=0;i<l;i++){
+        if(str[i] != f){
+            str[j++] = str[i];
         }
     }
+    str[j] = 0;
 }
 
 int main()
