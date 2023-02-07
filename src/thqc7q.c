@@ -56,9 +56,32 @@ void q2(){
     }
 }
 
+void q3(){
+    int i, n, s = 0 , f = 0;
+    // 质数（Prime number），又称素数，
+    // 指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数
+    // 也可定义为只有1与该数本身两个正因数的数。
+    // 大于1的自然数若不是素数，则称之为合数（也称为合成数）。例如，5是个素数，因为其正约数只有1与5
+    printf("input a number to test: ");
+    scanf("%d", &n);
+    if( n <= 1 ){
+        printf("%d is not a prime number\n");
+    }else{
+        f = (int) sqrt(n);
+        for(i=2;i<=f;i++){
+            if(n%i==0){
+                s = 1;
+                break;
+            }
+        }
+        printf("%d is%s a prime number\n", n, s==1 ? " not" : "");
+    }
+}
+
 int main()
 {
     //q1();
-    q2();
+    //q2();
+    q3();
     return 0;
 }
