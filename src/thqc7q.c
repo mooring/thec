@@ -93,14 +93,14 @@ void q4_func1(char arr[][3], int cnt){
         putchar('\n');
     }
 }
-void q4_func2(char (*arr)[3][3], int cnt){
-    int i, j;
-    char *c;
+void q4_func2(char arr[][3], int cnt){
+    int i,j;
+    char c;
     for(i=0; i<cnt; i++){
-        for(j=0; j<3; j++){
+        for(j=i+1; j<3; j++){
             c = arr[i][j];
-            *arr[i][j] = *arr[j][i];
-            *arr[j][i] = *c;
+            arr[i][j] = arr[j][i];
+            arr[j][i] = c;
         }
     }
 }
@@ -110,10 +110,9 @@ void q4(){
         {'x', 'y', 'z'},
         {'1', '2', '3'}
     };
-    char (*s_arr)[3][3] = &arr;
     q4_func1(arr, 3);
     puts("_________________\n");
-    q4_func2(s_arr, 3);
+    q4_func2(arr, 3);
     q4_func1(arr, 3);
 }
 
