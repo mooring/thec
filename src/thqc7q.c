@@ -71,7 +71,7 @@ void q3(){
     printf("input a number to test: ");
     scanf("%d", &n);
     if( n <= 1 ){
-        printf("%d is not a prime number\n");
+        printf("%d is not a prime number\n", n);
     }else{
         f = (int) sqrt(n);
         for(i=2;i<=f;i++){
@@ -84,10 +84,44 @@ void q3(){
     }
 }
 
+void q4_func1(char arr[][3], int cnt){
+    int i, j;
+    for(i=0; i<cnt; i++){
+        for(j=0; j<3; j++){
+            printf("%4c", arr[i][j]);
+        }
+        putchar('\n');
+    }
+}
+void q4_func2(char (*arr)[3][3], int cnt){
+    int i, j;
+    char *c;
+    for(i=0; i<cnt; i++){
+        for(j=0; j<3; j++){
+            c = arr[i][j];
+            *arr[i][j] = *arr[j][i];
+            *arr[j][i] = *c;
+        }
+    }
+}
+void q4(){
+    char arr[][3] = {
+        {'a', 'b', 'c'},
+        {'x', 'y', 'z'},
+        {'1', '2', '3'}
+    };
+    char (*s_arr)[3][3] = &arr;
+    q4_func1(arr, 3);
+    puts("_________________\n");
+    q4_func2(s_arr, 3);
+    q4_func1(arr, 3);
+}
+
 int main()
 {
     // q1();
     // q2();
     // q3();
+    q4();
     return 0;
 }
