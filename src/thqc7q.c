@@ -30,6 +30,7 @@ void q1_func2(int x, int y){
 
 void q1(){
     int x, y;
+    printf("thq charpter 7 question 1\n");
     printf("input two integer number: ");
     scanf("%d%d", &x, &y);
     q1_func1(x, y);
@@ -39,11 +40,15 @@ void q1(){
 void q2(){
     int a, b, c, bs, ac;
     double x[2] = {0.0};
+    printf("thq charpter 7 question 2\n");
+    
     printf("ax^2 + bx + c = 0, input integer a, b, c: \n");
     scanf("%d%d%d", &a, &b, &c);
+    
     bs = b * b;
     ac = 4 * a * c;
     printf("b*b-4ac=%d\n", bs - ac);
+    
     if(bs - ac < 0){
         printf("ax^2+bx+c=0 has no root\nwhen a=%d b=%d c=%d\n", a, b, c);
     }else if(bs - ac == 0){
@@ -58,6 +63,7 @@ void q2(){
 
 void q3(){
     int i, n, s = 0 , f = 0;
+    printf("thq charpter 7 question 3\n");
     // 质数（Prime number），又称素数，
     // 指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数
     // 也可定义为只有1与该数本身两个正因数的数。
@@ -80,8 +86,8 @@ void q3(){
 
 int main()
 {
-    //q1();
-    //q2();
-    q3();
+    // q1();
+    // q2();
+    // q3();
     return 0;
 }
