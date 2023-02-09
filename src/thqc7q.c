@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#define Q4_N 4
 
 void q1_func1(int x, int y){
     int i = 0, f = 0,
@@ -84,36 +85,39 @@ void q3(){
     }
 }
 
-void q4_func1(char arr[][3], int cnt){
+void q4_func1(char arr[][Q4_N], int cnt){
     int i, j;
     for(i=0; i<cnt; i++){
-        for(j=0; j<3; j++){
+        for(j=0; j<Q4_N; j++){
             printf("%4c", arr[i][j]);
         }
         putchar('\n');
     }
 }
-void q4_func2(char arr[][3], int cnt){
-    int i,j;
+
+void q4_func2(char arr[][Q4_N], int cnt){
+    int i, j;
     char c;
     for(i=0; i<cnt; i++){
-        for(j=i+1; j<3; j++){
+        for(j=i+1; j<Q4_N; j++){
             c = arr[i][j];
+            printf("%d.%d %c <=> %c\n", i, j, c, arr[j][i]);
             arr[i][j] = arr[j][i];
             arr[j][i] = c;
         }
     }
 }
 void q4(){
-    char arr[][3] = {
-        {'a', 'b', 'c'},
-        {'x', 'y', 'z'},
-        {'1', '2', '3'}
+    char arr[][Q4_N] = {
+        {'a', 'b', 'c', 'd'},
+        {'x', 'y', 'z', 'w'},
+        {'1', '2', '3', '4'},
+        {'A', 'B', 'C', 'D'}
     };
-    q4_func1(arr, 3);
+    q4_func1(arr, Q4_N);
     puts("_________________\n");
-    q4_func2(arr, 3);
-    q4_func1(arr, 3);
+    q4_func2(arr, Q4_N);
+    q4_func1(arr, Q4_N);
 }
 
 int main()
