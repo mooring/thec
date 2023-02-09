@@ -42,14 +42,14 @@ void q2(){
     int a, b, c, bs, ac;
     double x[2] = {0.0};
     printf("thq charpter 7 question 2\n");
-    
+
     printf("ax^2 + bx + c = 0, input integer a, b, c: \n");
     scanf("%d%d%d", &a, &b, &c);
-    
+
     bs = b * b;
     ac = 4 * a * c;
     printf("b*b-4ac=%d\n", bs - ac);
-    
+
     if(bs - ac < 0){
         printf("ax^2+bx+c=0 has no root\nwhen a=%d b=%d c=%d\n", a, b, c);
     }else if(bs - ac == 0){
