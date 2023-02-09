@@ -17,7 +17,7 @@ int main()
     printf("crr=%p, &crr[0]=%p, &crr=%p\n", crr, &crr[0], &crr);
     printf("irr=%p, &irr[0]=%p, &irr=%p\n", irr, &irr[0], &irr);
     printf("icr=%p, &icr[0]=%p, &icr=%p\n", icr, &icr[0], &icr);
-    printf("str=%p, &str[0]=%p, &str=%p\n", str, &str[0], &str);
+    printf("str=%-14p, &str[0]=%-14p, &str=%p\n", str, &str[0], &str);
 
     printf("\n");
 
