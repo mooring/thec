@@ -1,5 +1,8 @@
 **/bin/
 **/obj/
 **/min/
-**/.DS_Store
 **/.history/
+**/.DS_Store
+**/*.obj
+**/*.o
+**/*.exe

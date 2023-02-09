@@ -30,5 +30,7 @@
         <File name="src\typedef.c" />
         <File name="src\hanoi.c" />
         <File name="src\array.c" />
+        <File name="src\selectSort.c" />
+        <File name="src\strip_char.c" />
     </Project>
 </NotepadPlus>
