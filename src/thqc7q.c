@@ -96,22 +96,19 @@ void q3(){
 /*
  * @description: transform matrics
  * @requirement: output memory must be allocated before pass
- * @param/row  : src matrics row
- * @param/col  : src matrics col
+ * @param/row  : src matric row
+ * @param/col  : src matric col
  */
 void q4_func2(char **input, char **output, int row, int col){
-    int i, j, f = 0;
-    if(output == NULL){
-        output = (char **)malloc(sizeof(char*) * col);
-        f = 1;
-    }
-    for(i=0; i<row; i++){
-        if(f){
-            output[i] = (char *)malloc(sizeof(char) * row);
+    int i, j;
+    if(output != NULL){
+        for(i=0; i<row; i++){
+            for(j=0; j<col; j++){
+                output[j][i] = input[i][j];
+            }
         }
-        for(j=0; j<col; j++){
-            output[j][i] = input[i][j];
-        }
+    }else{
+        printf("output memory can't be null\n");
     }
 }
 
@@ -120,12 +117,14 @@ void q4_func2(char **input, char **output, int row, int col){
  */
 void q4_func1(char **arr, int row, int col ){
     int i, j;
-    printf("print array = %p\n", arr);
-    for(i=0; i<row; i++){
-        for(j=0; j<col; j++){
-            printf("%-4c", arr[i][j]);
+    printf("print matric @%p\n", arr);
+    if(arr !=  NULL){
+        for(i=0; i<row; i++){
+            for(j=0; j<col; j++){
+                printf("%-4c", arr[i][j]);
+            }
+            putchar('\n');
         }
-        putchar('\n');
     }
 }
 
@@ -139,15 +138,13 @@ void q4(){
     int i;
     char **input  = (char**)malloc(sizeof(char*) * Q4_ROW);
     char **output = (char**)malloc(sizeof(char*) * Q4_COL);
-    for(i=0; i<Q4_ROW; i++){
-        input[i]  = arr[i];
-    }
     for(i=0;i<Q4_COL;i++){
         output[i] = (char*)malloc(sizeof(char) * Q4_ROW);
     }
+    for(i=0;i<Q4_ROW; i++){input[i]  = arr[i];}
     q4_func1(input, Q4_ROW, Q4_COL);
     pline();
-    q4_func2(input, output, Q4_ROW, Q4_COL);
+    q4_func2(input, output, Q4_ROW, Q4_COL);    
     q4_func1(output, Q4_COL, Q4_ROW);
     free(input);
     for(i=Q4_COL-1;i>0;i--){free(output[i]);}free(output);
