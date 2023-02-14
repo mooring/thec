@@ -125,7 +125,6 @@ void q4(){
     char **input  = (char**)malloc(sizeof(char*) * Q4_ROW);
     char **output = (char**)malloc(sizeof(char*) * Q4_COL);
     for(i=0; i<Q4_ROW; i++){
-        input[i]  = (char*)malloc(sizeof(char) * Q4_COL);
         input[i]  = arr[i];
     }
     for(i=0;i<Q4_COL;i++){
@@ -136,6 +135,7 @@ void q4(){
     q4_func2(input, output, Q4_ROW, Q4_COL);
     q4_func1(output, Q4_COL, Q4_ROW);
     free(input);
+    for(i=Q4_COL-1;i>0;i--){free(output[i]);}
     free(output);
 }
 
