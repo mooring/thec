@@ -1,6 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #define Q4_N 4
+
+void pline(){
+    puts("---------------------\r");
+}
 
 void q1_func1(int x, int y){
     int i = 0, f = 0,
@@ -85,39 +90,54 @@ void q3(){
     }
 }
 
-void q4_func1(char arr[][Q4_N], int cnt){
+
+
+
+void q4_func2(char **input, char **output, int row, int col){
     int i, j;
-    for(i=0; i<cnt; i++){
-        for(j=0; j<Q4_N; j++){
-            printf("%4c", arr[i][j]);
+    for(i=0; i<row; i++){
+        if(i<col){
+            output[i][i] = input[i][i];
+        }
+        for(j=i+1; j<col; j++){
+            output[i][j] = input[j][i];
+            output[j][i] = input[i][j];
+        }
+    }
+}
+
+void q4_func1(char **arr, int row, int col ){
+    int i, j;
+    printf("print array = %p\n", arr);
+    for(i=0; i<row; i++){
+        for(j=0; j<col; j++){
+            printf("%-4c", arr[i][j]);
         }
         putchar('\n');
     }
 }
 
-void q4_func2(char arr[][Q4_N], int cnt){
-    int i, j;
-    char c;
-    for(i=0; i<cnt; i++){
-        for(j=i+1; j<Q4_N; j++){
-            c = arr[i][j];
-            printf("%d.%d %c <=> %c\n", i, j, c, arr[j][i]);
-            arr[i][j] = arr[j][i];
-            arr[j][i] = c;
-        }
-    }
-}
 void q4(){
     char arr[][Q4_N] = {
         {'a', 'b', 'c', 'd'},
-        {'x', 'y', 'z', 'w'},
+        {'x', 'y', 'z', 'p'},
         {'1', '2', '3', '4'},
         {'A', 'B', 'C', 'D'}
     };
-    q4_func1(arr, Q4_N);
-    puts("_________________\n");
-    q4_func2(arr, Q4_N);
-    q4_func1(arr, Q4_N);
+    int i,j;
+    char **input  = (char**)malloc(sizeof(char*) * Q4_N);
+    char **output = (char**)malloc(sizeof(char*) * Q4_N);
+    for(i=0; i<Q4_N; i++){
+        input[i]  = (char*)malloc(sizeof(char) * Q4_N);
+        output[i] = (char*)malloc(sizeof(char) * Q4_N);
+        input[i]  = arr[i];
+    }
+    q4_func1(input, Q4_N, Q4_N);
+    pline();
+    q4_func2(input, output, Q4_N, Q4_N);
+    q4_func1(output, Q4_N, Q4_N);
+    free(input);
+    free(output);
 }
 
 int main()
