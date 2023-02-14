@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #define Q4_COL 4
-#define Q4_ROW 2
+#define Q4_ROW 4
 
 void pline(){
     puts("---------------------\r");
@@ -93,16 +93,31 @@ void q3(){
 
 
 
-
+/*
+ * @description: transform matrics
+ * @requirement: output memory must be allocated before pass
+ * @param/row  : src matrics row
+ * @param/col  : src matrics col
+ */
 void q4_func2(char **input, char **output, int row, int col){
-    int i, j;
+    int i, j, f = 0;
+    if(output == NULL){
+        output = (char **)malloc(sizeof(char*) * col);
+        f = 1;
+    }
     for(i=0; i<row; i++){
+        if(f){
+            output[i] = (char *)malloc(sizeof(char) * row);
+        }
         for(j=0; j<col; j++){
             output[j][i] = input[i][j];
         }
     }
 }
 
+/*
+ * @description: print matrics with row, column
+ */
 void q4_func1(char **arr, int row, int col ){
     int i, j;
     printf("print array = %p\n", arr);
@@ -117,9 +132,9 @@ void q4_func1(char **arr, int row, int col ){
 void q4(){
     char arr[Q4_ROW][Q4_COL] = {
         {'a', 'b', 'c', 'd'},
-        {'x', 'y', 'z', 'p'}/* ,
+        {'x', 'y', 'z', 'p'},
         {'1', '2', '3', '4'},
-        {'A', 'B', 'C', 'D'} */
+        {'A', 'B', 'C', 'D'}
     };
     int i;
     char **input  = (char**)malloc(sizeof(char*) * Q4_ROW);
@@ -135,8 +150,7 @@ void q4(){
     q4_func2(input, output, Q4_ROW, Q4_COL);
     q4_func1(output, Q4_COL, Q4_ROW);
     free(input);
-    for(i=Q4_COL-1;i>0;i--){free(output[i]);}
-    free(output);
+    for(i=Q4_COL-1;i>0;i--){free(output[i]);}free(output);
 }
 
 int main()
