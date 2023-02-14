@@ -122,7 +122,7 @@ void q4(){
         {'A', 'B', 'C', 'D'} */
     };
     int i;
-    char **input  = (char**)malloc(sizeof(char*) * Q4_COL);
+    char **input  = (char**)malloc(sizeof(char*) * Q4_ROW);
     char **output = (char**)malloc(sizeof(char*) * Q4_COL);
     for(i=0; i<Q4_ROW; i++){
         input[i]  = (char*)malloc(sizeof(char) * Q4_COL);
