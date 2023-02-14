@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define Q4_N 4
+#define Q4_COL 4
+#define Q4_ROW 2
 
 void pline(){
     puts("---------------------\r");
@@ -96,11 +97,7 @@ void q3(){
 void q4_func2(char **input, char **output, int row, int col){
     int i, j;
     for(i=0; i<row; i++){
-        if(i<col){
-            output[i][i] = input[i][i];
-        }
-        for(j=i+1; j<col; j++){
-            output[i][j] = input[j][i];
+        for(j=0; j<col; j++){
             output[j][i] = input[i][j];
         }
     }
@@ -118,24 +115,26 @@ void q4_func1(char **arr, int row, int col ){
 }
 
 void q4(){
-    char arr[][Q4_N] = {
+    char arr[Q4_ROW][Q4_COL] = {
         {'a', 'b', 'c', 'd'},
-        {'x', 'y', 'z', 'p'},
+        {'x', 'y', 'z', 'p'}/* ,
         {'1', '2', '3', '4'},
-        {'A', 'B', 'C', 'D'}
+        {'A', 'B', 'C', 'D'} */
     };
-    int i,j;
-    char **input  = (char**)malloc(sizeof(char*) * Q4_N);
-    char **output = (char**)malloc(sizeof(char*) * Q4_N);
-    for(i=0; i<Q4_N; i++){
-        input[i]  = (char*)malloc(sizeof(char) * Q4_N);
-        output[i] = (char*)malloc(sizeof(char) * Q4_N);
+    int i;
+    char **input  = (char**)malloc(sizeof(char*) * Q4_COL);
+    char **output = (char**)malloc(sizeof(char*) * Q4_COL);
+    for(i=0; i<Q4_ROW; i++){
+        input[i]  = (char*)malloc(sizeof(char) * Q4_COL);
         input[i]  = arr[i];
     }
-    q4_func1(input, Q4_N, Q4_N);
+    for(i=0;i<Q4_COL;i++){
+        output[i] = (char*)malloc(sizeof(char) * Q4_ROW);
+    }
+    q4_func1(input, Q4_ROW, Q4_COL);
     pline();
-    q4_func2(input, output, Q4_N, Q4_N);
-    q4_func1(output, Q4_N, Q4_N);
+    q4_func2(input, output, Q4_ROW, Q4_COL);
+    q4_func1(output, Q4_COL, Q4_ROW);
     free(input);
     free(output);
 }
