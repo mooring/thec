@@ -24,4 +24,7 @@ init:
 	mkdir -p min bin obj
 
 clean:
-	rm -f obj/* bin/* min/*
+	rm -f obj/* bin/* min/* 
+	rm -f *.EXE *.OBJ
+	rm -f src/*.EXE src/*.OBJ src/*.O
+	rm -f src/*.exe src/*.obj src/*.o
