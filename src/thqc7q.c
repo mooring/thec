@@ -105,7 +105,6 @@ void q3(){
     printf("input a integer to check if it's a prime number: ");
     scanf("%d", &n);
     s = q3_func1(n);
-    fflush(stdout);
     printf("%d is%sa prime number\n", n, s==0 ? " not " : " ");
 }
 
