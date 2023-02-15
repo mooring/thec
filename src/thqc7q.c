@@ -75,22 +75,20 @@ void q2(){
  */ 
 int q3_func1(int n){
     int i, j;
-    if(n<2){
-        return 0;
-    }else if(n<=5 && n!=4){
-        return 1;
-    }else if(n%6 != 1 && n%6 != 5){
-        return 0;
-    }else{
-        // number 35 will be here
-        j = (int)sqrt(n);
-        for(i=5;i<=j;i+=6){
-            if(n%i == 0 || n % (i+2)==0){
-                return 0;
-            }
-        }
-        return 1;
+    if(n<=3){
+        return n>1;
     }
+    if(n%6 != 1 && n%6 != 5){
+        return 0;
+    }
+    // number 35 will be here
+    j = (int)sqrt(n);
+    for(i=5;i<=j;i+=6){
+        if(n%i == 0 || n % (i+2) == 0){
+            return 0;
+        }
+    }
+    return 1;
 }
 
 void q3(){
