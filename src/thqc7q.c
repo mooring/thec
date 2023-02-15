@@ -37,8 +37,8 @@ void q1_func2(int x, int y){
 
 void q1(){
     int x, y;
-    printf("thq charpter 7 question 1\n");
-    printf("input two integer number: ");
+    printf("thq chapter 7 question 1\n");
+    printf("输入两个整数数求最大公约数、最小公倍数: ");
     scanf("%d%d", &x, &y);
     q1_func1(x, y);
     q1_func2(x, y);
@@ -47,9 +47,9 @@ void q1(){
 void q2(){
     int a, b, c, bs, ac;
     double x[2] = {0.0};
-    printf("thq charpter 7 question 2\n");
+    printf("thq chapter 7 question 2\n");
 
-    printf("ax^2 + bx + c = 0, input integer a, b, c: \n");
+    printf("输入方程ax^2 + bx + c = 0 整型参数 a, b, c: \n");
     scanf("%d%d%d", &a, &b, &c);
 
     bs = b * b;
@@ -68,27 +68,43 @@ void q2(){
     }
 }
 
+/*
+ * @description: check input number is a prime number
+ * @param/n    : int
+ * @return     : int (1 true/0 false)
+ */ 
+int q3_func1(int n){
+    int i, j;
+    if(n<2){
+        return 0;
+    }else if(n<=5 && n!=4){
+        return 1;
+    }else if(n%6 != 1 && n%6 != 5){
+        return 0;
+    }else{
+        // number 35 will be here
+        j = (int)sqrt(n);
+        for(i=5;i<=j;i+=6){
+            if(n%i == 0 || n % (i+2)==0){
+                return 0;
+            }
+        }
+        return 1;
+    }
+}
+
 void q3(){
-    int i, n, s = 0 , f = 0;
-    printf("thq charpter 7 question 3\n");
+    int n, s = 0;
+    printf("thq chapter 7 question 3\n");
     // 质数（Prime number），又称素数，
     // 指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数
     // 也可定义为只有1与该数本身两个正因数的数。
     // 大于1的自然数若不是素数，则称之为合数（也称为合成数）。例如，5是个素数，因为其正约数只有1与5
-    printf("input a number to test: ");
+    printf("input a integer to check if it's a prime number: ");
     scanf("%d", &n);
-    if( n <= 1 ){
-        printf("%d is not a prime number\n", n);
-    }else{
-        f = (int) sqrt(n);
-        for(i=2;i<=f;i++){
-            if(n%i==0){
-                s = 1;
-                break;
-            }
-        }
-        printf("%d is%s a prime number\n", n, s==1 ? " not" : "");
-    }
+    s = q3_func1(n);
+    fflush(stdout);
+    printf("%d is%sa prime number\n", n, s==0 ? " not " : " ");
 }
 
 
@@ -138,6 +154,7 @@ void q4(){
     int i;
     char **input  = (char**)malloc(sizeof(char*) * Q4_ROW);
     char **output = (char**)malloc(sizeof(char*) * Q4_COL);
+    printf("thq chapter 7 question 4\n");
     for(i=0;i<Q4_COL;i++){
         output[i] = (char*)malloc(sizeof(char) * Q4_ROW);
     }
@@ -154,7 +171,7 @@ int main()
 {
     // q1();
     // q2();
-    // q3();
+    q3();
     q4();
     return 0;
 }
