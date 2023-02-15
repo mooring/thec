@@ -74,16 +74,20 @@ void q2(){
  * @return     : int (1 true/0 false)
  */ 
 int q3_func1(int n){
-    int i, j;
+    int i, j, k = 0;
     if(n<=3){
         return n>1;
     }
     if(n%6 != 1 && n%6 != 5){
         return 0;
     }
-    // number 35 will be here
+    // number 25 35 will be here
     j = (int)sqrt(n);
     for(i=5;i<=j;i+=6){
+        printf(
+            "%-3d sqrt(%d) = %d, %d%%6 = %d, %d%%%d = %d, %d%%%d = %d\n", 
+            k++, n, j, n, n%6, n, i, n%i, n, i+2, n % (i+2)
+        );
         if(n%i == 0 || n % (i+2) == 0){
             return 0;
         }
