@@ -7,3 +7,6 @@
 **/*.o
 **/*.exe
 **/a.out
+**/.vscode/
+**/.idea/
+
