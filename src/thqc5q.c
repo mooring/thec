@@ -257,7 +257,7 @@ void question11(void){
     }
     sum = sum - init;
     n = clock() - n;
-    printf("cost %.2fs to calculate question11\n", n/CLOCKS_PER_SEC);
+    printf("cost %.2fs to calculate question11\n", CLOCKS_PER_SEC);
     printf("10 times height: %.6lf, round length: %.6lf\n", tmp, sum);
 }
 void question12(void)

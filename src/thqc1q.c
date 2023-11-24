@@ -1,13 +1,12 @@
 #include <stdio.h>
 
-int main(void)
+int main0(void)
 {
     printf("**********************\n");
     printf("     Hello World!\n");
     printf("**********************\n");
     return 0;
 }
-#include <stdio.h>
 
 void print_star0(void)
 {
@@ -24,16 +23,15 @@ void print_star1(void)
         printf(" %s\n", str + (6 - 2*i));
     }
 }
-int main(void)
+int main1(void)
 {
     print_star0();
     printf("------------------------\n");
     print_star1();
     return 0;
 }
-#include <stdio.h>
 
-int main(void)
+int main2(void)
 {
     int a = 0, b = 0, c = 0;
     int max = 0;
@@ -58,3 +56,9 @@ int main(void)
     return 0;
 }
 
+void main(void)
+{
+    main0();
+    main1();
+    main2();
+}
