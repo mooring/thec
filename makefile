@@ -1,5 +1,5 @@
 SRC = $(wildcard src/*.c)
-MSRC= src/sqrt.c src/thqc3q.c src/thqc4q.c src/thqc5q.c src/thqc2q4.6.c src/thqc7q.c
+MSRC= src/sqrt.c src/thqc3q.c src/thqc4q.c src/thqc5q.c src/thqc2q.c src/thqc7q.c
 MOBJ= $(patsubst src/%.c,obj/%.o,$(MSRC))
 MBIN= $(patsubst obj/%.o,min/%,$(MOBJ))
 OBJ = $(filter-out $(MOBJ),$(patsubst src/%.c,obj/%.o,$(SRC)))
