@@ -18,7 +18,7 @@ obj/%.o: src/%.c
 bin/%: obj/%.o
 	gcc -o $@ $<
 min/%: obj/%.o
-	gcc -lm -o $@ $<
+	gcc -o $@ $< -lm 
 
 init:
 	mkdir -p min bin obj
